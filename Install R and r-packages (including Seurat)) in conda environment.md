@@ -3,7 +3,7 @@ Create Install R and r-packages (including Seurat)) in conda environment
   ### 1.Conda 
   Conda is a tool to manage environments and packages. 
   
-   If you haven't used conda before or `conda` command doesn't work in your HPC, add the code below into you .bashrc file at the root of your DartFS home. 
+   If you haven't used conda before or `conda` command doesn't work in your HPC, add the code below into your .bashrc file at the root of your DartFS home. 
   
    ``` 
   source /optnfs/common/miniconda3/etc/profile.d/conda.sh 
@@ -18,7 +18,7 @@ Create Install R and r-packages (including Seurat)) in conda environment
   $conda create -name YOUR_ENV_NAME 
   ``` 
   
-   Your environment created by conda live in **_.conda/envs** folder. 
+   Your environment created by conda lives in **_.conda/envs** folder. 
   
    ### 3.Activate your environment 
   
