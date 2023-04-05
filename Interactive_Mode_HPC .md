@@ -57,7 +57,7 @@ $ srun --pty /bin/bash
 ```
 if error appears again
 ```
-ç^Csrun: Cancelled pending job step with signal 2
+srun: Cancelled pending job step with signal 2
 srun: error: Unable to create step for job 1257531: Job/step already completing or completed
 ```
 add your file at the end
