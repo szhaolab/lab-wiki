@@ -9,6 +9,7 @@ This tutorial will help you to set up rstudio server. With rstudio server, you w
 screen
 
 # Pull down the Singularity image
+# Note: you only need to do this once. In the first time you set up rstudio server, you run the following command to get rstudio.simg. Then you can keep it in the home directory and skip this step later on.
 singularity pull --name rstudio.simg docker://rocker/tidyverse:latest
 
 # Create the local filesystem
