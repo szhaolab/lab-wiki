@@ -51,6 +51,9 @@ http://localhost:8789
 # log in as d92495j and password is aaa
 ```
 
+Ocassionally, you may get the the error message "port already in use". To solve this error, you can kill the process using the port by `lsof -ti:8789 | xargs kill -9`. Please change the port number accordingly in this command.
+
+
 # Set up RStudio server using Conda environment
 
 There are two methods to do this, if Method 1 does not work for you, please try Method 2 below. 
