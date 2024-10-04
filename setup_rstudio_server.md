@@ -232,7 +232,7 @@ sbatch rstudio_server.sh
 
 This step will apply a node for you and set up rstudio server. The R you are using and its library will be the same as in the environment you run this `sbatch` command.
 
-You can modify, memory, run time, port number, password, the location of your singalarity image, *etc* in `rstudio_server.sh` .
+You can modify memory, run time, port number, password, the location of your singalarity image, *etc* in `rstudio_server.sh` .
 
 -   Then use `squeue -u $USER` on discovery to check for node name. I usually do this in morning, when the node is easy to get. For example, you may get the following output
 
