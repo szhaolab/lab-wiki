@@ -153,7 +153,7 @@ then type this to check and see you’re connected to the correct path.
 .libPaths()
 ```
 
--   **Remember, try to install packages using terminal**
+**Remember, try to install packages using terminal**
 
 ```         
 $ conda activate ‘your env’
