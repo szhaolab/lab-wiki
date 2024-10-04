@@ -1,4 +1,4 @@
-Create Install R and r-packages (including Seurat)) in conda environment
+Install R and r-packages (including Seurat) in conda environment
 ## Install R and r-packages in conda environment 
   ### 1.Conda 
   Conda is a tool to manage environments and packages. 
