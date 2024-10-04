@@ -66,13 +66,13 @@ Be sure to change the username in the above command when running. Then open the 
 
 Occasionally, you may get the the error message "port already in use". To solve this error, you can kill the process using the port by `lsof -ti:8789 | xargs kill -9`. Please change the port number accordingly in this command.
 
-## Set up RStudio server on Polaris using Conda environment
+### Set up RStudio server on Polaris using Conda environment
 
 There are two methods to do this. If Method 1 does not work for you, please try Method 2.
 
-## Method 1:
+- **Method 1**:
 
-### 1. open up a terminal window, log in **Polaris**
+1. open up a terminal window, log in Polaris
 
 make a directory within the home directory
 
@@ -90,7 +90,7 @@ $ pwd
 /dartfs-hpc/rc/home/k/f******/singularity_images
 ```
 
-### 2. open another terminal window, log in to **Discovery**
+2. open another terminal window, log in to **Discovery**
 
 ```         
 ssh f*****@discovery.hpcc.dartmouth.edu
@@ -110,7 +110,7 @@ Copy the rstudio.simg file from scratch space to your newly made directory
 $ cp /scratch/rstudio/rstudio.simg /dartfs-hpc/rc/home/k/f******/singularity_images
 ```
 
-### 3. Go back to the **Polaris** terminal window
+3. Go back to the **Polaris** terminal window
 
 ```         
 singularity exec \
@@ -125,7 +125,7 @@ singularity exec \
 
 Be sure to change the working directory paths to your own and change the port number!
 
-### 4. open the third terminal window
+4. open the third terminal window
 
 ```         
  % ssh -N -f -L ****:localhost:**** f******@polaris.dartmouth.edu
@@ -133,7 +133,7 @@ Be sure to change the working directory paths to your own and change the port nu
 
 then type your password
 
-### 5. open up a browser
+5. open up a browser
 
 ```         
 localhost:****
@@ -141,7 +141,7 @@ localhost:****
 
 You are now able to use your Rstudio server within a conda environment.
 
-### 6. On your RStudio Server console
+6. On your RStudio Server console
 
 ```         
 .libPaths("/dartfs-hpc/rc/home/k/f******/.conda/envs/r_env/lib")
@@ -161,10 +161,10 @@ $ conda activate ‘your env’
 
 **Try not to install packages through Rstudio server, Rstudio server is a bit strange when it comes to installing packages.**
 
-## Method 2:
+- **Method 2:**
 
 ```         
-## 1. Create/pull down singularity image as above (SKIP if already done)
+1. Create/pull down singularity image as above (SKIP if already done)
 
 # create a screen
 screen
@@ -173,7 +173,7 @@ screen
 # Note: you only need to do this once. In the first time you set up rstudio server, you run the following command to get rstudio.simg. Then you can keep it in the home directory and skip this step later on.
 singularity pull --name rstudio.simg docker://rocker/tidyverse:latest
 
-## 2. Have the conda environment you want to use with RStudio server set up (confirm R is present in conda environment)
+2. Have the conda environment you want to use with RStudio server set up (confirm R is present in conda environment)
 
 conda create -n env
 conda activate env
@@ -184,7 +184,7 @@ conda activate /dartfs/rc/lab/S/Szhao/user/conda/base
 # install R if not already in environment 
 conda install -c r r-essentials
 
-## 3. Open another terminal and log into Polaris
+3. Open another terminal and log into Polaris
 
 # create a screen
 screen
