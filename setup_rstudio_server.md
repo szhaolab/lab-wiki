@@ -1,4 +1,4 @@
-# Section 1: Set up Rstudio server on HPC.
+# Set up Rstudio server on HPC.
 
 -   This tutorial has two sections. One is about setting up the server on Polaris. The other one is about setting up the server on discovery.\*
 
@@ -6,7 +6,7 @@ The advantage of using Polaris is that you directly set up the server on Polaris
 
 Alternatively, you can set up Rstudio server on Discovery. On Discovery, you will need to apply for a compute with specified memory, and the maximum running time of a node is 30 days. Thus you will need to set up your server every 30 days, but the advantage of using discovery is that this give you more control of the node. The compute node is not affected by other users, while on Polaris there are times then the system is overloaded with many users. Another advantage of using Discovery is that, the R used the server will be the exact same one that you use when running jobs on Discovery.
 
-## Set up RStudio server on Polaris.
+## Section 1: Set up RStudio server on Polaris.
 
 You can set up the server with R installed on Polaris or use the R installed by `conda`.
 
@@ -214,7 +214,7 @@ rserver \
 
 If no error pops up, please refer to Steps 4 and 5 in Method 1 to sign into RStudio Server.
 
-# Section 2: Set up RStudio server on Discovery.
+## Section 2: Set up RStudio server on Discovery.
 
 -   Obtain `rstudio_server.sh` from the lab-wiki repo.
 
