@@ -1,4 +1,4 @@
-# Set up Rstudio server on HPC.
+# Section 1: Set up Rstudio server on HPC.
 
 -   This tutorial has two sections. One is about setting up the server on Polaris. The other one is about setting up the server on discovery.\*
 
@@ -214,7 +214,7 @@ rserver \
 
 If no error pops up, please refer to Steps 4 and 5 in Method 1 to sign into RStudio Server.
 
-# Set up RStudio server on Discovery.
+# Section 2: Set up RStudio server on Discovery.
 
 -   Obtain `rstudio_server.sh` from the lab-wiki repo.
 
