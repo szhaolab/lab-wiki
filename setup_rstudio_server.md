@@ -70,9 +70,9 @@ Occasionally, you may get the the error message "port already in use". To solve 
 
 There are two methods to do this. If Method 1 does not work for you, please try Method 2.
 
-- **Method 1**:
+-   **Method 1**:
 
-1. open up a terminal window, log in Polaris
+1.  open up a terminal window, log in Polaris
 
 make a directory within the home directory
 
@@ -90,7 +90,7 @@ $ pwd
 /dartfs-hpc/rc/home/k/f******/singularity_images
 ```
 
-2. open another terminal window, log in to **Discovery**
+2.  open another terminal window, log in to **Discovery**
 
 ```         
 ssh f*****@discovery.hpcc.dartmouth.edu
@@ -110,7 +110,7 @@ Copy the rstudio.simg file from scratch space to your newly made directory
 $ cp /scratch/rstudio/rstudio.simg /dartfs-hpc/rc/home/k/f******/singularity_images
 ```
 
-3. Go back to the **Polaris** terminal window
+3.  Go back to the **Polaris** terminal window
 
 ```         
 singularity exec \
@@ -125,7 +125,7 @@ singularity exec \
 
 Be sure to change the working directory paths to your own and change the port number!
 
-4. open the third terminal window
+4.  open the third terminal window
 
 ```         
  % ssh -N -f -L ****:localhost:**** f******@polaris.dartmouth.edu
@@ -133,7 +133,7 @@ Be sure to change the working directory paths to your own and change the port nu
 
 then type your password
 
-5. open up a browser
+5.  open up a browser
 
 ```         
 localhost:****
@@ -141,7 +141,7 @@ localhost:****
 
 You are now able to use your Rstudio server within a conda environment.
 
-6. On your RStudio Server console
+6.  On your RStudio Server console
 
 ```         
 .libPaths("/dartfs-hpc/rc/home/k/f******/.conda/envs/r_env/lib")
@@ -161,7 +161,7 @@ $ conda activate ‘your env’
 
 **Try not to install packages through Rstudio server, Rstudio server is a bit strange when it comes to installing packages.**
 
-- **Method 2:**
+-   **Method 2:**
 
 ```         
 1. Create/pull down singularity image as above (SKIP if already done)
@@ -254,3 +254,5 @@ The node you applied for this job is named "s18".
     here s18 is the node's name you applied on Discovery. Remember to change it the actual node name, as it will change each time you set up the server.
 
 -   On your local computer, open your browser with url: `http://localhost:8789` and log in using your username and the password is aaa.
+
+**Remember, try to install packages using terminal, not from rstudio server.**
