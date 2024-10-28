@@ -59,7 +59,7 @@ system.time({
 ## Useful commands for this issue
 `top -u $USER`: check the active memory and CPU usage; press `1` on the keyboard to see detailed usage for individual CPU cores (will not mark with CPU cores in use though). 
 
-`export OMP_NUM_THREADS = 1`: overwrite the current OMP_NUM_THREADS to 1. This will force R to use single threaded BLAS. Set this before running parallelized code.
+`export OMP_NUM_THREADS=1`: overwrite the current OMP_NUM_THREADS to 1. This will force R to use single threaded BLAS. Set this before running parallelized code.
 
 `unset OMP_NUM_THREADS`: reset the OMP_NUM_THREADS to default (i.e. the number of available cores).
 
