@@ -258,4 +258,7 @@ The node you applied for this job is named "s18".
 
 -   On your local computer, open your browser with url: `http://localhost:8789` and log in using your username and the password is aaa.
 
+**Remember, cancel your rstudio job after you are done!**  
+Don't waste resources! Use `squeue -u $USER` to see the job ID with name rstudio server. Then cancel the job using `scancel xxx`, where xxx is the job ID.  
+
 **Remember, try to install packages using terminal, not from rstudio server.**
