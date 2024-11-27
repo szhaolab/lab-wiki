@@ -1,3 +1,5 @@
+Updated on Nov 27th, 2024. Incorporated Owen Wilkins' (DAC) rstudio server set up tutorial.
+
 # Set up Rstudio server on HPC.
 
 -   This tutorial has two sections. One is about setting up the server on Polaris. The other one is about setting up the server on discovery.\*
@@ -217,6 +219,7 @@ If no error pops up, please refer to Steps 4 and 5 in Method 1 to sign into RStu
 ## Section 2: Set up RStudio server on Discovery.
 
 -   Obtain `rstudio_server.sh` from the lab-wiki repo.
+    You can modify the rstudio_server.sh to specify the number of cores and memory you need for the rstudio server.
 
     Also download singularity like described in the above section "Set up RStudio server on Polaris with the R installed on Polaris." . Note you only need to do this step once.
 
