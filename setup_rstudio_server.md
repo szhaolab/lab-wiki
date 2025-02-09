@@ -47,13 +47,15 @@ rserver \
 --auth-pam-helper-path=pam-helper \
 --www-address=127.0.0.1 \
 --www-port=8789 \
---server-user $USER
+--server-user $USER \
+# --rsession-ld-library-path=/personalpath:/optnfs/el8/Rlibs/4.3:/dartfs-hpc/admin/opt/el8/R/4.3.1/lib64/R/library
 
 # detach from the screen
 # press ctrl + A + D
 ```
-
 Note if this port is being used, change the port number. and of course you need to change the port number in the following commands too.
+
+If you want to use the R already installed on the R, you can find its paths by using `which R` on the terminal. There is a shared library of R packages already installed, you can append these libraries path in --rsession-ld-library-path to use these libraries.e.g for R 4.3 the libraries are here `/optnfs/el8/Rlibs/4.3`,`/dartfs-hpc/admin/opt/el8/R/4.3.1/lib64/R/library`, then you can do `--rsession-ld-library-path=personalpath:/optnfs/el8/Rlibs/4.3:/dartfs-hpc/admin/opt/el8/R/4.3.1/lib64/R/library` to include these shared libraries. 
 
 -   On local computer/laptop
 
@@ -69,101 +71,6 @@ Be sure to change the username in the above command when running. Then open the 
 Occasionally, you may get the the error message "port already in use". To solve this error, you can kill the process using the port by `lsof -ti:8789 | xargs kill -9`. Please change the port number accordingly in this command.
 
 ### Set up RStudio server on Polaris using Conda environment
-
-There are two methods to do this. If Method 1 does not work for you, please try Method 2.
-
--   **Method 1**:
-
-1.  open up a terminal window, log in Polaris
-
-make a directory within the home directory
-
-```         
-$ mkdir singularity_imgs
-```
-
-print working diretory
-
-```         
-$ pwd 
-```
-
-```         
-/dartfs-hpc/rc/home/k/f******/singularity_images
-```
-
-2.  open another terminal window, log in to **Discovery**
-
-```         
-ssh f*****@discovery.hpcc.dartmouth.edu
-```
-
-If prompt asks **‘Are you sure you want to continue connecting (yes/no/[fingerprint])?**
-
-Type
-
-```         
-> yes
-```
-
-Copy the rstudio.simg file from scratch space to your newly made directory
-
-```         
-$ cp /scratch/rstudio/rstudio.simg /dartfs-hpc/rc/home/k/f******/singularity_images
-```
-
-3.  Go back to the **Polaris** terminal window
-
-```         
-singularity exec \
---bind /dartfs-hpc/rc/home/k/f******/.conda/envs/r_env \
---bind $(pwd)  /dartfs-hpc/rc/home/k/f******/singularity_images/rstudio.simg rserver \
---www-address=127.0.0.1 \
---www-port **** \
---rsession-which-r=/dartfs-hpc/rc/home/k/f******/.conda/envs/r_env/bin/R \
---rsession-ld-library-path=/dartfs-hpc/rc/home/k/f******/.conda/envs/r_env/lib \
---server-user $USER
-```
-
-Be sure to change the working directory paths to your own and change the port number! See below for using R libraries already installed on the server.
-
-4.  open the third terminal window
-
-```         
- % ssh -N -f -L ****:localhost:**** f******@polaris.dartmouth.edu
-```
-
-then type your password
-
-5.  open up a browser
-
-```         
-localhost:****
-```
-
-You are now able to use your Rstudio server within a conda environment.
-
-6.  On your RStudio Server console
-
-```         
-.libPaths("/dartfs-hpc/rc/home/k/f******/.conda/envs/r_env/lib")
-```
-
-then type this to check and see you’re connected to the correct path.
-
-```         
-.libPaths()
-```
-
-**Remember, try to install packages using terminal**
-
-```         
-$ conda activate ‘your env’
-```
-
-**Try not to install packages through Rstudio server, Rstudio server is a bit strange when it comes to installing packages.**
-
--   **Method 2:**
 
 ```         
 1. Create/pull down singularity image as above (SKIP if already done)
@@ -213,10 +120,43 @@ rserver \
 
 # Note: Confirm the path to the location of your R and R libraries are correct. 
 ```
-If you want to use the R already installed on the R, you can find its paths by using `which R` on the terminal. There is a shared library of R packages already installed, you can append these libraries path in --rsession-ld-library-path to use these libraries.e.g for R 4.3 the libraries are here `/optnfs/el8/Rlibs/4.3`,`/dartfs-hpc/admin/opt/el8/R/4.3.1/lib64/R/library`, then you can do `--rsession-ld-library-path=personalpath:/optnfs/el8/Rlibs/4.3:/dartfs-hpc/admin/opt/el8/R/4.3.1/lib64/R/library` to include these shared libraries. 
+There is a shared library of R packages already installed, you can append these libraries path in --rsession-ld-library-path to use these libraries.e.g for R 4.3 the libraries are here `/optnfs/el8/Rlibs/4.3`,`/dartfs-hpc/admin/opt/el8/R/4.3.1/lib64/R/library`, then you can do `--rsession-ld-library-path=personalpath:/optnfs/el8/Rlibs/4.3:/dartfs-hpc/admin/opt/el8/R/4.3.1/lib64/R/library` to include these shared libraries. 
 
+4.  open the third terminal window
 
-If no error pops up, please refer to Steps 4 and 5 in Method 1 to sign into RStudio Server.
+```         
+ % ssh -N -f -L ****:localhost:**** f******@polaris.dartmouth.edu
+```
+
+then type your password
+
+5.  open up a browser
+
+```         
+localhost:****
+```
+
+You are now able to use your Rstudio server within a conda environment.
+
+6.  On your RStudio Server console
+
+```         
+.libPaths("/dartfs-hpc/rc/home/k/f******/.conda/envs/r_env/lib")
+```
+
+then type this to check and see you’re connected to the correct path.
+
+```         
+.libPaths()
+```
+
+**Remember, try to install packages using terminal**
+
+```         
+$ conda activate ‘your env’
+```
+
+**Try not to install packages through Rstudio server, Rstudio server is a bit strange when it comes to installing packages.**
 
 ## Section 2: Set up RStudio server on Discovery.
 
