@@ -71,7 +71,7 @@ Be sure to change the username in the above command when running. Then open the 
 Occasionally, you may get the the error message "port already in use". To solve this error, you can kill the process using the port by `lsof -ti:8789 | xargs kill -9`. Please change the port number accordingly in this command.
 
 ### Set up RStudio server on Polaris using Conda environment
-
+1. On the server terminal do this: 
 ```         
 1. Create/pull down singularity image as above (SKIP if already done)
 
@@ -122,7 +122,7 @@ rserver \
 ```
 There is a shared library of R packages already installed, you can append these libraries path in --rsession-ld-library-path to use these libraries.e.g for R 4.3 the libraries are here `/optnfs/el8/Rlibs/4.3`,`/dartfs-hpc/admin/opt/el8/R/4.3.1/lib64/R/library`, then you can do `--rsession-ld-library-path=personalpath:/optnfs/el8/Rlibs/4.3:/dartfs-hpc/admin/opt/el8/R/4.3.1/lib64/R/library` to include these shared libraries. 
 
-4.  open the third terminal window
+2.  open another terminal window on your local computer.
 
 ```         
  % ssh -N -f -L ****:localhost:**** f******@polaris.dartmouth.edu
