@@ -125,7 +125,7 @@ singularity exec \
 --server-user $USER
 ```
 
-Be sure to change the working directory paths to your own and change the port number!
+Be sure to change the working directory paths to your own and change the port number! See below for using R libraries already installed on the server.
 
 4.  open the third terminal window
 
