@@ -245,6 +245,9 @@ Also check the R version you want to use and the R library paths. If you want to
 
 There is a shared library of R packages already installed, you can append these libraries path in --rsession-ld-library-path to use these libraries.e.g for R 4.3 the libraries are here `/optnfs/el8/Rlibs/4.3`,`/dartfs-hpc/admin/opt/el8/R/4.3.1/lib64/R/library`, then you can do `--rsession-ld-library-path=personalpath:/optnfs/el8/Rlibs/4.3:/dartfs-hpc/admin/opt/el8/R/4.3.1/lib64/R/library` to include these shared libraries. The path to you personal library ususally looks like this: `/dartfs-hpc/rc/home/m/fxxxx/R/x86_64-redhat-linux-gnu-library/4.3`. 
 
+When you install new libraries from R, you can add these libraries by `.libPaths(c(<my library path here>,
+              "/optnfs/el8/Rlibs/4.3","/dartfs-hpc/admin/opt/el8/R/4.3.1/lib64/R/library"))`, then `install.packages('newpackage'` so that you don't need to install its dependencies if these dependencies existsin the shared library. 
+
 -   Then use `squeue -u $USER` on discovery to check for node name. I usually do this in morning, when the node is easy to get. For example, you may get the following output
 
 ```         
