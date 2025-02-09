@@ -40,7 +40,10 @@ rserver \
 --auth-timeout-minutes=0 \
 --www-address=${node} \
 --www-port=8789 \
---server-user $USER
+--server-user $USER \
+--rsession-which-r=/usr/bin/R \
+# --rsession-ld-library-path=/dartfs-hpc/rc/home/m/fxxxx/R/x86_64-redhat-linux-gnu-library/4.4:/optnfs/el8/Rlibs/4.4:/dartfs-hpc/admin/opt/el8/
+R/4.4.0/lib/R/library
 
 # Exit
 printf 'rserver exited' 1>&2
