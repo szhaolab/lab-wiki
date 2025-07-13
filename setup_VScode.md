@@ -19,19 +19,20 @@ echo $HOST_IP
 jupyter-notebook --no-browser --ip=$HOST_IP --port=15021
 
 Then you will get a link like http://10.248.140.169:15021/tree?token=786af28426ac188f4e39f482698357aa6b011b85d60d1392
-Copy it.
+Copy it.  
 
 <img width="492" height="109" alt="image" src="https://github.com/user-attachments/assets/5721306c-426d-452b-9e47-12cc0c9caf0f" />
 
-
  
 ## Step 4: Open VS Code and connect to the compute node 
-Click the button “><” at the bottom-left corner and select “Open a Remote Window”.
+Click the button “><” at the bottom-left corner and select “Open a Remote Window”.  
+
 <img width="190" height="107" alt="image" src="https://github.com/user-attachments/assets/364679b4-12bd-448b-bfe0-065c74f2ebdf" />
 
 Click “Connect to Host”
 Connect to SSH Host “discovery8.dartmouth.edu”
 Open a .ipynb file (Jupyter Notebook)  
+
 <img width="416" height="27" alt="image" src="https://github.com/user-attachments/assets/950cc6b1-77bd-49e3-a482-6508f3d3072b" />
 
 
