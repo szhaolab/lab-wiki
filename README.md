@@ -20,10 +20,7 @@ Managing permissions. [labshare_permissions.md](labshare_permissions.md)
 * Setup Jupyter lab. [setup_jupyterlab.md](setup_jupyterlab.md)
 
 ## Using VS code on HPC
-* 
-
-
-
+* Set up. [setup_VScode.md](setup_VScode.md)
 
 ## Github related.
 
