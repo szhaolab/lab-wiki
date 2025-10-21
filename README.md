@@ -28,3 +28,6 @@ Managing permissions. [labshare_permissions.md](labshare_permissions.md)
 
 ## Batch job submission.
 See repo `MultiJobSlurm` for batch job submission on discovery.
+
+## Job Dependency Chain
+See folder `Job_Dependency_Chain` for batch dependency examples on Discovery.
